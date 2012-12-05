@@ -1,0 +1,19 @@
+apply plugin: 'groovy'
+
+dependencies {
+    compile gradleApi()
+    groovy localGroovy()
+}
+
+apply plugin: 'maven'
+
+group = 'ch.neiva.gradle.plugins'
+version = '1.0'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('repo'))
+        }
+    }
+}
